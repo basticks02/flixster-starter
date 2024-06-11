@@ -3,13 +3,6 @@ import './App.css'
 import SearchSort from './SearchSort'
 import MovieCard from './MovieCard'
 
-// const fetchData = async () => {
-//   const apiKey = import.meta.env.VITE_API_KEY;
-//   const response = await fetch('https://api.themoviedb.org/3/movie/550?api_key=${apiKey}&language=en-US');
-//   const data = await response.json();
-//   setMovieData(data);
-// }
-
 const fetchData = async (apiKey, setMovies) => {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`);

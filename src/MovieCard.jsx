@@ -1,4 +1,4 @@
-// import React from 'react'
+
 import './MovieCard.css'
 
 export default function MovieCard({movie}) {
@@ -16,4 +16,3 @@ export default function MovieCard({movie}) {
     </div>
   )
 }
-// console.log(MovieCard)
