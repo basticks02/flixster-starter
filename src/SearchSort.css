@@ -1,0 +1,17 @@
+.searchsortbar{
+    display: flex;
+    justify-content: space-between ;
+    margin: 0 20px 0 20px;
+
+}
+
+    @media (max-width: 600px) {
+        .searchsortbar{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search > input{
+            margin-bottom: 20px;
+        }
+    }
