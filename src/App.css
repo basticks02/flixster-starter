@@ -26,20 +26,20 @@
     flex-direction: column;
   }
 } */
-.cardcontainer{
+/* .cardcontainer{
   display: flex;
   padding: 20px 20px 20px 20px;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 
-}
+} */
 
 footer{
   text-align: right;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 
   .cardcontainer{
     flex-direction: column;
@@ -58,4 +58,4 @@ footer{
   .search-bar form {
     flex-direction: column;
   }
-}
+} */

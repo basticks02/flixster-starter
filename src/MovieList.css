@@ -1,0 +1,21 @@
+.cardcontainer{
+    display: flex;
+    padding: 20px 20px 20px 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+ /* border: black solid 1px; */
+  }
+
+  .button{
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+
+    .cardcontainer{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
