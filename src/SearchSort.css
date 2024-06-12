@@ -1,14 +1,27 @@
 .searchsortbar{
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     margin: 0 20px 0 20px;
 
 }
+
+.sort:hover{
+    cursor: pointer;
+}
+
 
     @media (max-width: 600px) {
         .searchsortbar{
             flex-direction: column;
             align-items: center;
+        }
+
+        .sort{
+            margin: none;
+        }
+
+        .nowplaying{
+            margin-bottom: 20px;
         }
 
         .search > input{

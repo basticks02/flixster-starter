@@ -4,6 +4,16 @@
     width: 200px;
 }
 
+.low{
+    color: red;
+}
+.medium{
+    color: orange;
+}
+.high{
+    color: green;
+}
+
 .cardimg{
     width: 190px;
     height: 250px;
@@ -23,6 +33,17 @@
 .info{
     margin: 10px;
     margin-top: 0;
+}
+
+.info>h4, .info>p{
+    margin: 5px 0 0 5px;
+}
+
+.info>p{
+    margin: 5px 0 0 5px;
+    text-align: right;
+    font-size: medium;
+    margin-right: 10px;
 }
 
 @media (max-width: 600px) {
