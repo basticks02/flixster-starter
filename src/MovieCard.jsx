@@ -1,5 +1,6 @@
 
 import './MovieCard.css'
+import PropTypes from 'prop-types'
 
 export default function MovieCard({movie}) {
     let movie_poster = movie.backdrop_path;
@@ -15,4 +16,8 @@ export default function MovieCard({movie}) {
         </div>
     </div>
   )
+}
+
+MovieCard.propTypes = {
+    movie: PropTypes.object
 }

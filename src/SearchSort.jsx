@@ -1,11 +1,12 @@
 
 import './SearchSort.css'
+import PropTypes from 'prop-types'
 
-export default function SearchSort() {
+export default function SearchSort({handleSearchChange, searchQuery}) {
   return (
     <div className='searchsortbar'>
       <div className='search'>
-        <input type="text" placeholder="Search it"/>
+        <input value={searchQuery} onChange={handleSearchChange} type="text" placeholder="Search it"/>
         <button type='submit' value='Submit'>Search</button>
       </div>
 
@@ -18,4 +19,9 @@ export default function SearchSort() {
       </div>
     </div>
   )
+}
+
+SearchSort.propTypes = {
+  handleSearchChange: PropTypes.func,
+  searchQuery: PropTypes.string
 }
