@@ -18,6 +18,17 @@ header{
 
 }
 
+.headline{
+  display: flex;
+  justify-content: center;
+}
+
+.flixerpic{
+  margin: 5px 0 10px 0;
+  height: 60px;
+  height: 60px;
+}
+
 main{
   padding-top: 160px;
 }

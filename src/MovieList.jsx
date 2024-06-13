@@ -29,7 +29,7 @@ const fetchData = async (apiKey, page, setMovies, searchQuery, showNowPlaying, a
   }
 };
 
-export default function MovieList({searchQuery, showNowPlaying, handleOpenModal, selectedGenre, sortOption}) {
+export default function MovieList({searchQuery, showNowPlaying, handleOpenModal, selectedGenre, sortOption, handleLikeMovie}) {
 
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
@@ -69,7 +69,7 @@ export default function MovieList({searchQuery, showNowPlaying, handleOpenModal,
 
       <div className='cardcontainer'>
       {sortedMovies.length > 0 ? sortedMovies.map(movie => (
-          <MovieCard key={movie.id} movie={movie} handleOpenModal={handleOpenModal}/>
+          <MovieCard key={movie.id} movie={movie} handleOpenModal={handleOpenModal} handleLikeMovie={handleLikeMovie}/>
         )) : <p>No movies found</p>}
       </div>
 
@@ -88,5 +88,6 @@ MovieList.propTypes = {
   showNowPlaying: PropTypes.bool,
   handleOpenModal: PropTypes.func,
   selectedGenre: PropTypes.string,
-  sortOption: PropTypes.string
+  sortOption: PropTypes.string,
+  handleLikeMovie: PropTypes.func
 }
