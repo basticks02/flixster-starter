@@ -10,6 +10,8 @@ export default function App() {
   const [showNowPlaying, setShowNowPlaying] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [selectedGenre, setSelectedGenre] = useState('')
+  const [sortOption , setSortOption] = useState('')
 
 
   const handleSearchChange = (event) => {
@@ -34,16 +36,38 @@ export default function App() {
     setSelectedMovie(null)
   }
 
+  const handleGenreChange = (genreId) => {
+    setSelectedGenre(genreId)
+    setShowNowPlaying(false)
+  }
+
+  const handleSortChange = (sortOption) => {
+    setSortOption(sortOption)
+  }
+
   return (
     <>
 
       <header>
         <h1 style={{textAlign: 'center'}}>Flixster</h1>
-        <SearchSort searchQuery={searchQuery} handleSearchChange={handleSearchChange} handleNowPlayingClick={handleNowPlayingClick} handleSearchClick={handleSearchClick}/>
+        <SearchSort
+        searchQuery={searchQuery}
+        handleSearchChange={handleSearchChange}
+        handleNowPlayingClick={handleNowPlayingClick}
+        handleSearchClick={handleSearchClick}
+        handleGenreChange={handleGenreChange}
+        handleSortChange={handleSortChange}
+        />
       </header>
 
       <div>
-        <MovieList searchQuery={searchQuery} showNowPlaying={showNowPlaying} handleOpenModal={handleOpenModal}/>
+        <MovieList
+        searchQuery={searchQuery}
+        showNowPlaying={showNowPlaying}
+        handleOpenModal={handleOpenModal}
+        selectedGenre={selectedGenre}
+        sortOption={sortOption}
+        />
         {showModal && <Modal movie={selectedMovie} handleCloseModal={handleCloseModal}/>}
       </div>
 
