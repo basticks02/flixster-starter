@@ -1,0 +1,51 @@
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+ }
+
+ .low{
+    color: red;
+}
+.medium{
+    color: orange;
+}
+.high{
+    color: green;
+}
+
+.modalhead{
+    display: flex;
+    justify-content: space-between;
+}
+ .modal-content {
+    background-color: white;
+    margin: 8% auto;
+    padding: 30px;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+ }
+
+ .modalstuff{
+    text-align: center;
+ }
+
+ .close {
+    color: #f2eded;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+ }
+ .close:hover,
+ .close:focus {
+    color: rgb(181, 16, 16);
+    text-decoration: none;
+    cursor: pointer;
+ }

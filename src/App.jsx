@@ -1,12 +1,15 @@
 import './App.css'
 import SearchSort from './SearchSort'
 import MovieList from './MovieList'
+import Modal from './Modal'
 import { useState } from 'react'
 
 export default function App() {
 
   const [searchQuery, setSearchQuery] = useState('')
   const [showNowPlaying, setShowNowPlaying] = useState(true)
+  const [showModal, setShowModal] = useState(false)
+  const [selectedMovie, setSelectedMovie] = useState(null)
 
 
   const handleSearchChange = (event) => {
@@ -21,6 +24,16 @@ export default function App() {
     setShowNowPlaying(true)
   }
 
+  const handleOpenModal = (movie) => {
+    setSelectedMovie(movie)
+    setShowModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setShowModal(false)
+    setSelectedMovie(null)
+  }
+
   return (
     <>
 
@@ -30,7 +43,8 @@ export default function App() {
       </header>
 
       <div>
-        <MovieList searchQuery={searchQuery} showNowPlaying={showNowPlaying}/>
+        <MovieList searchQuery={searchQuery} showNowPlaying={showNowPlaying} handleOpenModal={handleOpenModal}/>
+        {showModal && <Modal movie={selectedMovie} handleCloseModal={handleCloseModal}/>}
       </div>
 
       <footer>

@@ -20,6 +20,7 @@ export default function SearchSort({handleSearchChange, searchQuery, handleNowPl
           <option value="names">Sort By Name</option>
           <option value="likes">Sort By Likes</option>
           <option value="date">Sort By Date</option>
+          <option value="likes">Sort By Genre</option>
         </select>
       </div>
     </div>
