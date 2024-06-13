@@ -1,6 +1,7 @@
 
 import './MovieCard.css'
 import PropTypes from 'prop-types'
+import video from './assets/video.png'
 
 const roundedoff = (rating) => {
   return parseFloat(rating).toFixed(1);
@@ -23,10 +24,18 @@ export default function MovieCard({movie, handleOpenModal}) {
 
     const rating = roundedoff(movie.vote_average);
 
+    let img_src = null
+    if(movie_poster === null){
+      img_src = video
+    }
+    else{
+      img_src = "https://image.tmdb.org/t/p/w500"+movie_poster;
+    }
+
   return (
     <div className='moviecard' onClick={() => handleOpenModal(movie)}>
 
-        <img className='cardimg' src={"https://image.tmdb.org/t/p/w500"+movie_poster} />
+        <img className='cardimg' src={img_src} />
 
         <div className='info'>
             <h4>{movie.original_title}</h4>
