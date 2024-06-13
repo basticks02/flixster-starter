@@ -34,6 +34,7 @@
     display: flex;
     padding: 0 10px 0 10px;
     margin-top: -5px;
+    justify-content: center;
 }
 
 .info>h4, .info>p{
@@ -49,21 +50,23 @@
 
 .fa-heart{
     font-size: 15px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     margin: 16px 10px 0 0;
+    padding-bottom: 0;
 }
 
 .fa-eye{
     font-size: 15px;
     color: gray;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     margin: 16px 10px 0 0;
+    padding-bottom: -5px;
 }
 
 .fa-heart:hover{
     cursor: pointer;
     transform: scale(1.2);
-    color: rgb(94, 93, 93);
+    color: rgb(147, 143, 143);
 }
 
 .fa-eye:hover{

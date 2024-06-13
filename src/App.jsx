@@ -60,7 +60,7 @@ export default function App() {
         />
       </header>
 
-      <div>
+      <main>
         <MovieList
         searchQuery={searchQuery}
         showNowPlaying={showNowPlaying}
@@ -69,7 +69,7 @@ export default function App() {
         sortOption={sortOption}
         />
         {showModal && <Modal movie={selectedMovie} handleCloseModal={handleCloseModal}/>}
-      </div>
+      </main>
 
       <footer>
         <p>@2024 Flixter</p>

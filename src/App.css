@@ -1,5 +1,33 @@
 
 
 footer{
-  text-align: right;
+  text-align: center;
+  box-shadow: 0 -4px 8px blue(0, 0, 0, 0.3);
+  padding: 2px 0 5px 0 ;
+  margin: 20px 0 0 0;
+}
+
+header{
+  background-color: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 30px 0 20px 0 ;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0
+
+}
+
+main{
+  padding-top: 160px;
+}
+
+@media (max-width: 600px) {
+  main{
+    padding-top: 250px;
+  }
+
+  header{
+    padding: 10px 0 20px 0 ;
+  }
 }

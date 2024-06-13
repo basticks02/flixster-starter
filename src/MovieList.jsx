@@ -5,8 +5,6 @@ import MovieCard from './MovieCard'
 
 const fetchData = async (apiKey, page, setMovies, searchQuery, showNowPlaying, appendMovies, selectedGenre) => {
   try {
-    // const endpoint = searchQuery && !showNowPlaying ? `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=${page}&api_key=${apiKey}`
-    // : `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=${page}`;
 
     let endpoint;
     if (selectedGenre) {
