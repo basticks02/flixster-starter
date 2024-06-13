@@ -26,11 +26,6 @@ const genres = [
 ];
 
 export default function SearchSort({handleSearchChange, searchQuery, handleNowPlayingClick, handleSearchClick, handleGenreChange, handleSortChange}) {
-  // const [genreDropdownVisible, setGenreDropdownVisible] = useState(false)
-
-  // const toggleGenreDropdown = () => {
-  //   setGenreDropdownVisible(!genreDropdownVisible)
-  // }
 
   return (
     <div className='searchsortbar'>
@@ -50,7 +45,6 @@ export default function SearchSort({handleSearchChange, searchQuery, handleNowPl
           <option value="likes">Sort By Likes</option>
           <option value="date">Sort By Date</option>
           <optgroup label='Sort By Genre'>
-            {/* <option value="sortByGenre" onClick={toggleGenreDropdown}>Genres</option> */}
             {genres.map(genre =>(
               <option key={genre.id} value={genre.id} onClick={() => handleGenreChange(genre.id)}>{genre.name}</option>
             ))}

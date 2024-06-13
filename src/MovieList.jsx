@@ -66,14 +66,6 @@ export default function MovieList({searchQuery, showNowPlaying, handleOpenModal,
 
   const sortedMovies = sortMovies(movies, sortOption);
 
-  // const filteredMovies = selectedGenre ? movies.filter(movie => movie.genre_ids.includes(parseInt(selectedGenre))) : movies;
-
-  // useEffect(() => {
-  //   if(selectedGenre){
-  //     setMovies(filteredMovies);
-  //   }
-  // }, [filteredMovies, selectedGenre])
-
   return (
     <>
 
