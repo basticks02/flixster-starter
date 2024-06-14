@@ -68,8 +68,8 @@ export default function App() {
 
       <header>
         <div className='headline'>
-          <img className="flixerpic" src={flixerpic}/>
-          <h1 style={{textAlign: 'center'}}>Flixster</h1>
+          <img className="flixerpic" src={flixerpic} />
+          <h1 style={{textAlign: 'center', textShadow: '0 4px 8px rgba(0, 0, 0, 0.4)'}}>FLIXSTER</h1>
         </div>
         <SearchSort
         searchQuery={searchQuery}
@@ -94,7 +94,9 @@ export default function App() {
         handleLikeMovie={handleLikeMovie}
         />
         {showModal && <Modal movie={selectedMovie} handleCloseModal={handleCloseModal}/>}
-        {isSidebarOpen && <Sidebar likedMovies={likedMovies}/>}
+        <div className={`sidebar ${isSidebarOpen ? 'sidebar-open': ''}`}>
+          <Sidebar likedMovies={likedMovies}/>
+        </div>
       </main>
 
       <footer>

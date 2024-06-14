@@ -1,3 +1,25 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+}
+
 .modal {
     display: block;
     position: fixed;
@@ -9,7 +31,8 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
     backdrop-filter: blur(5px);
- }
+    color: white;
+}
 
 .low{
     color: red;
@@ -24,14 +47,40 @@
 .modalhead{
     display: flex;
     justify-content: space-between;
+
+    text-transform: uppercase;
 }
- .modal-content {
-    background-color: white;
-    margin: 8% auto;
+
+.stufftext{
+    justify-content: center;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.stufftext strong{
+    color: rgb(165, 189, 209);
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.modal-content {
+    margin: 17% auto;
     padding: 30px;
     width: 60%;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 1.5);
+}
+
+.modal-content.fade-in{
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content.fade-out{
+    animation: fadeOut 0.3s ease forwards;
  }
 
  .modal-img{
@@ -42,17 +91,13 @@
    object-fit: cover;
  }
 
- .utube{
-    height: 100%;
-    width: 100%;
- }
-
  .modalstuff{
-    text-align: center;
+    text-align: left;
+    display: flex;
  }
 
  .close {
-    color: gray;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -65,11 +110,30 @@
     cursor: pointer;
  }
 
- @media (max-width: 100px) {
+ @media (max-width: 1000px) {
     .modal-img{
         height: 100%;
         width: 80%;
         object-fit: cover;
+    }
+
+    .modalstuff{
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .utube{
+        height: 100%;
+        width: 100%;
+     }
+
+     .stufftext{
+        text-align: center;
+        width: 100%
+    }
+
+    .modal-content{
+        margin: 30% auto;
     }
 
  }

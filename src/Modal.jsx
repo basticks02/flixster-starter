@@ -69,6 +69,8 @@ export default function Modal({movie, handleCloseModal}) {
     const rating = roundedoff(movie.vote_average);
 
     const [videoKey, setVideoKey] = useState('');
+    const [fadeClass, setFadeClass] = useState('fade-in')
+
     useEffect(() => {
         const fetchVideo = async () => {
         const apiKey = import.meta.env.VITE_API_KEY;
@@ -82,12 +84,20 @@ export default function Modal({movie, handleCloseModal}) {
         fetchVideo();
     }, [movie.id]);
 
+    const handleClose = () => {
+        setFadeClass('fade-out');
+        setTimeout(() => {
+          handleCloseModal();}, 500);}
 
   return (
     <>
     <div className='modal'>
-        <div className='modal-content'>
-            <span className="close" onClick={handleCloseModal}>&times;</span>
+        <div className={`modal-content ${fadeClass}`}style={{
+             backgroundImage: `url(${"https://image.tmdb.org/t/p/w500"+movie.backdrop_path})`,
+             backgroundSize: 'cover',
+             backgroundPosition: 'center',
+             }}>
+            <span className="close" onClick={handleClose}>&times;</span>
             <div className="modal-info">
                 <div className='modalhead'>
                     <h1>{movie.original_title} </h1>
@@ -95,11 +105,11 @@ export default function Modal({movie, handleCloseModal}) {
                 </div>
 
                 <div className='modalstuff'>
-                    <img className='modal-img' src={"https://image.tmdb.org/t/p/w500"+movie.backdrop_path} alt={movie.original_title}/>
-
-                    <p><strong>Release Date: </strong>{movie.release_date}</p>
-                    <p><strong>Overview: </strong>{movie.overview}</p>
-                    <p><strong>Genre: </strong>{genres}</p>
+                    <div className='stufftext'>
+                        <p><strong>Release Date: </strong>{movie.release_date}</p>
+                        <p><strong>Overview: </strong>{movie.overview}</p>
+                        <p><strong>Genre: </strong>{genres}</p>
+                    </div>
                     <iframe className='utube'
                         width="560px"
                         height="315px"
@@ -107,6 +117,7 @@ export default function Modal({movie, handleCloseModal}) {
                         title="YouTube video player" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerPolicy="strict-origin-when-cross-origin"
+                        style={{boxShadow: '0 4px 8px rgba(0, 0, 0, .5)'}}
                         allowFullScreen></iframe>
                 </div>
             </div>
