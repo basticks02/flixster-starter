@@ -30,7 +30,7 @@ export default function SearchSort({handleSearchChange, searchQuery, handleNowPl
     <div className='searchsortbar'>
 
       <div className='search'>
-        <input style={{marginRight: "5px"}} value={searchQuery} onChange={handleSearchChange} type="text" placeholder="Search it"/>
+        <input className='searchbox' style={{marginRight: "5px"}} value={searchQuery} onChange={handleSearchChange} type="text" placeholder="Search it"/>
         <button type='submit' value='Submit' onClick={handleSearchClick}>Search</button>
       </div>
 
@@ -39,7 +39,7 @@ export default function SearchSort({handleSearchChange, searchQuery, handleNowPl
       </div>
 
       <div className='sort'>
-        <select name="sort" id="Sort" onChange={(e) => handleSortChange(e.target.value)}>
+        <select className='sortbox' name="sort" id="Sort" onChange={(e) => handleSortChange(e.target.value)}>
           <option value="names">Sort By Trending</option>
           <option value="likes">Sort By Likes</option>
           <option value="date">Sort By Date</option>

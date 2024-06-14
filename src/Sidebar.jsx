@@ -3,8 +3,8 @@ import './Sidebar.css'
 
 export default function Sidebar({likedMovies}) {
   return (
-    <div className='sidebar'>
-        <h3>Liked Movies</h3>
+    <div className='sidebar-open'>
+        <h2>Liked Movies <i className='fa-solid fa-heart' style={{color: 'red'}}></i> </h2>
         <ul>
             {likedMovies.map(movie => (
                 <li key={movie.id}>{movie.original_title}</li>
