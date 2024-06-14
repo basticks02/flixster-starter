@@ -37,6 +37,14 @@
  .modal-img{
    border-radius: 10px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+   height: 100%;
+   width: 90%;
+   object-fit: cover;
+ }
+
+ .utube{
+    height: 100%;
+    width: 100%;
  }
 
  .modalstuff{
@@ -55,4 +63,13 @@
     color: rgb(181, 16, 16);
     text-decoration: none;
     cursor: pointer;
+ }
+
+ @media (max-width: 100px) {
+    .modal-img{
+        height: 100%;
+        width: 80%;
+        object-fit: cover;
+    }
+
  }

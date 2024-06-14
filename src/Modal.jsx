@@ -97,11 +97,10 @@ export default function Modal({movie, handleCloseModal}) {
                 <div className='modalstuff'>
                     <img className='modal-img' src={"https://image.tmdb.org/t/p/w500"+movie.backdrop_path} alt={movie.original_title}/>
 
-                    <p>Release Date: {movie.release_date}</p>
-                    <p>Runtime: </p>
-                    <p>Overview: {movie.overview}</p>
-                    <p>Genre: {genres}</p>
-                    <iframe
+                    <p><strong>Release Date: </strong>{movie.release_date}</p>
+                    <p><strong>Overview: </strong>{movie.overview}</p>
+                    <p><strong>Genre: </strong>{genres}</p>
+                    <iframe className='utube'
                         width="560px"
                         height="315px"
                         src={`https://www.youtube.com/embed/${videoKey}`}

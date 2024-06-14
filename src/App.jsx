@@ -4,7 +4,7 @@ import MovieList from './MovieList'
 import Modal from './Modal'
 import Sidebar from './Sidebar'
 import { useState } from 'react'
-import flixerpic from './assets/flixerpic.webp'
+import flixerpic from './assets/flixerpic.gif'
 
 export default function App() {
 

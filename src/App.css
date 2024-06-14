@@ -4,7 +4,7 @@ footer{
   text-align: center;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
   padding: 2px 0 5px 0 ;
-  margin: 20px 0 0 0;
+  z-index: 9999;
 }
 
 header{
@@ -30,7 +30,7 @@ header{
 }
 
 main{
-  padding-top: 160px;
+  padding: 160px 0 20px 0;
 }
 
 @media (max-width: 600px) {

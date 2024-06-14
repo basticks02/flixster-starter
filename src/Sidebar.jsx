@@ -4,7 +4,7 @@ import './Sidebar.css'
 export default function Sidebar({likedMovies}) {
   return (
     <div className='sidebar'>
-        <h3>Liked Movies</h3>
+        <h2>Liked Movies</h2>
         <ul>
             {likedMovies.map(movie => (
                 <li key={movie.id}>{movie.original_title}</li>

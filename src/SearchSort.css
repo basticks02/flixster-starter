@@ -5,8 +5,33 @@
 
 }
 
-.sort:hover{
+.searchbox{
+    border-radius: 10px;
+    padding: 3px 0 3px 3px;
+    border: none;
+    background-color: aliceblue;
+    box-shadow: inset 4px 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.searchbox:hover{
+    background-color: white;
+    transform: scale(1.03);
+}
+
+.sortbox{
+    border-radius: 10px;
+    padding: 3px 0 3px 3px;
+    border: none;
+    background-color: aliceblue;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.sortbox:hover{
     cursor: pointer;
+    background-color: white;
+    transform: scale(1.03);
 }
 
 
