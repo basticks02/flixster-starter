@@ -4,7 +4,7 @@ Submitted by: **Ekom-obong(Praise) Ekanem**
 
 Estimated time spent: **30** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site] (https://flixster-starter-lfqq.onrender.com)
 
 ### Application Features
 
@@ -31,8 +31,8 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-- [ ] **Deployment**
-  - [ ] Website is deployed via Render.
+- [x] **Deployment**
+  - [x] Website is deployed via Render.
 - [x] **Embedded Movie Trailers**
   - [x] Within the popup displaying a movie's details, users can play the movie trailer.
 - [x] **Watched Checkbox**
@@ -47,7 +47,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+`<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/ba9934370fe3444db2a76e972f47b11a?sid=fdd25acb-a866-4a36-9840-9a22a93b11f7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
 
 ### Reflection
 
@@ -61,7 +61,7 @@ If I had more time, I would invest more in the UI and interactivity. Also, I wou
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I did not demo this week
 
 ### Open-source libraries used
 
