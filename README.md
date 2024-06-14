@@ -4,7 +4,7 @@ Submitted by: **Ekom-obong(Praise) Ekanem**
 
 Estimated time spent: **30** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site] (https://flixster-starter-lfqq.onrender.com)
+Deployed Application (optional): [Flixster Deployed Site] (https://flixster-starter-3c57.onrender.com)
 
 ### Application Features
 
