@@ -1,5 +1,6 @@
 import './Modal.css';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 const getRating = (rating) => {
     if (rating < 5) {
@@ -62,9 +63,25 @@ const roundedoff = (rating) => {
     return parseFloat(rating).toFixed(1);
 }
 
+
 export default function Modal({movie, handleCloseModal}) {
     const genres = movie.genre_ids.map(id => getGenres(id)).join(', ');
     const rating = roundedoff(movie.vote_average);
+
+    const [videoKey, setVideoKey] = useState('');
+    useEffect(() => {
+        const fetchVideo = async () => {
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${apiKey}`);
+        const data = await response.json();
+        console.log(data);
+        const youtubeVideo = data.results.find(video => video.site === 'YouTube' && video.type === 'Trailer');
+        setVideoKey(youtubeVideo ? youtubeVideo.key : '');
+        };
+
+        fetchVideo();
+    }, [movie.id]);
+
 
   return (
     <>
@@ -84,6 +101,14 @@ export default function Modal({movie, handleCloseModal}) {
                     <p>Runtime: </p>
                     <p>Overview: {movie.overview}</p>
                     <p>Genre: {genres}</p>
+                    <iframe
+                        width="560px"
+                        height="315px"
+                        src={`https://www.youtube.com/embed/${videoKey}`}
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen></iframe>
                 </div>
             </div>
 

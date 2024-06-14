@@ -2,7 +2,9 @@ import './App.css'
 import SearchSort from './SearchSort'
 import MovieList from './MovieList'
 import Modal from './Modal'
+import Sidebar from './Sidebar'
 import { useState } from 'react'
+import flixerpic from './assets/flixerpic.webp'
 
 export default function App() {
 
@@ -12,6 +14,8 @@ export default function App() {
   const [selectedMovie, setSelectedMovie] = useState(null)
   const [selectedGenre, setSelectedGenre] = useState('')
   const [sortOption , setSortOption] = useState('')
+  const [likedMovies, setLikedMovies] = useState([])
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
 
   const handleSearchChange = (event) => {
@@ -45,11 +49,28 @@ export default function App() {
     setSortOption(sortOption)
   }
 
+  const handleLikeMovie = (movie) => {
+    setLikedMovies(prevLikedMovies =>{
+      if(prevLikedMovies.some(m => m.id === movie.id)){
+        return prevLikedMovies.filter(m => m.id !== movie.id)
+    }else{
+      return [...prevLikedMovies, movie]
+    }
+    })
+  }
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev)
+  }
+
   return (
     <>
 
       <header>
-        <h1 style={{textAlign: 'center'}}>Flixster</h1>
+        <div className='headline'>
+          <img className="flixerpic" src={flixerpic}/>
+          <h1 style={{textAlign: 'center'}}>Flixster</h1>
+        </div>
         <SearchSort
         searchQuery={searchQuery}
         handleSearchChange={handleSearchChange}
@@ -58,18 +79,23 @@ export default function App() {
         handleGenreChange={handleGenreChange}
         handleSortChange={handleSortChange}
         />
+        <button onClick={toggleSidebar} className='sidebar-toggle'>
+          <i className={`fa-solid ${isSidebarOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+        </button>
       </header>
 
-      <div>
+      <main style={{backgroundColor: 'rgba(134, 133, 133, 0.1)'}}>
         <MovieList
         searchQuery={searchQuery}
         showNowPlaying={showNowPlaying}
         handleOpenModal={handleOpenModal}
         selectedGenre={selectedGenre}
         sortOption={sortOption}
+        handleLikeMovie={handleLikeMovie}
         />
         {showModal && <Modal movie={selectedMovie} handleCloseModal={handleCloseModal}/>}
-      </div>
+        {isSidebarOpen && <Sidebar likedMovies={likedMovies}/>}
+      </main>
 
       <footer>
         <p>@2024 Flixter</p>

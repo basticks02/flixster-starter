@@ -8,9 +8,10 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
  }
 
- .low{
+.low{
     color: red;
 }
 .medium{
@@ -31,6 +32,11 @@
     width: 60%;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+ }
+
+ .modal-img{
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
  }
 
  .modalstuff{

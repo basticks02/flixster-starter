@@ -9,7 +9,7 @@ const roundedoff = (rating) => {
   return parseFloat(rating).toFixed(1);
 }
 
-export default function MovieCard({movie, handleOpenModal}) {
+export default function MovieCard({movie, handleOpenModal, handleLikeMovie}) {
     let movie_poster = movie.backdrop_path;
 
     const getRating = (rating) => {
@@ -38,6 +38,7 @@ export default function MovieCard({movie, handleOpenModal}) {
     const handleLikeClick = (like) => {
       like.stopPropagation();
       setLikeColor(prev => prev === 'grey' ? 'red' : 'grey');
+      handleLikeMovie(movie);
     }
 
     const [starColor, setStarColor] = useState('grey');
@@ -65,5 +66,6 @@ export default function MovieCard({movie, handleOpenModal}) {
 
 MovieCard.propTypes = {
     movie: PropTypes.object,
-    handleOpenModal: PropTypes.func
+    handleOpenModal: PropTypes.func,
+    handleLikeMovie: PropTypes.func
 }
