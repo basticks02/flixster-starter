@@ -95,7 +95,7 @@ export default function Modal({movie, handleCloseModal}) {
         <div className={`modal-content ${fadeClass}`}style={{
              backgroundImage: `url(${"https://image.tmdb.org/t/p/w500"+movie.backdrop_path})`,
              backgroundSize: 'cover',
-             backgroundPosition: 'center',
+             backgroundPosition: 'center'
              }}>
             <span className="close" onClick={handleClose}>&times;</span>
             <div className="modal-info">
