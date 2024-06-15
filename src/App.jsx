@@ -100,7 +100,7 @@ export default function App() {
       </main>
 
       <footer>
-        <p>@2024 Flixter</p>
+        <p>@2024 Basticks</p>
       </footer>
 
     </>
